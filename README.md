@@ -1,1 +1,1 @@
-# Getting start with React Native
+# Getting started with React Native
