@@ -2,18 +2,13 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    display: "flex",
-
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
   text: {
     color: "#f00",
     fontSize: 40,
-  },
-  flatList: {
-    color: "#f00",
-    flex: 1,
   },
 });
 
