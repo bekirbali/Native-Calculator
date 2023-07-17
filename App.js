@@ -4,11 +4,22 @@ import { StyleSheet, Text, View, Button, TextInput } from "react-native";
 
 export default function App() {
   const [items, setItems] = useState([1, 2, 3]);
+  const [text, setText] = useState("");
+
+  const newItem = {
+    id: new Date().getTime(),
+    value,
+  };
+
+  const pressHandler = () => {
+    setItems((oldItems) => [...oldItems, newItem]);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
-        <TextInput style={styles.input} placeholder="Your goal!" />
-        <Button title="Add Goal" />
+        <TextInput style={styles.input} placeholder="Your goal!" value={text} />
+        <Button title="Add Goal" onPress={pressHandler} />
       </View>
       <View>
         {items?.map((item, index) => (
