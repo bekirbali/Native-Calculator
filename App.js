@@ -8,7 +8,7 @@ export default function App() {
 
   const newItem = {
     id: new Date().getTime(),
-    value,
+    value: text,
   };
 
   const pressHandler = () => {
@@ -18,7 +18,12 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
-        <TextInput style={styles.input} placeholder="Your goal!" value={text} />
+        <TextInput
+          style={styles.input}
+          placeholder="Your goal!"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
         <Button title="Add Goal" onPress={pressHandler} />
       </View>
       <View>
