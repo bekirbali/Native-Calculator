@@ -11,8 +11,8 @@ export default function App() {
         <Button title="Add Goal" />
       </View>
       <View>
-        {items?.map((item) => (
-          <Text> {item},</Text>
+        {items?.map((item, index) => (
+          <Text key={index}> {item},</Text>
         ))}
       </View>
     </View>
