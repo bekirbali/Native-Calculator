@@ -20,8 +20,11 @@ export default function App() {
   };
 
   const pressHandler = () => {
-    setItems((oldItems) => [...oldItems, newItem]);
-    setText("");
+    if (text.trim().length) {
+      setItems((oldItems) => [...oldItems, newItem]);
+      setText("");
+      return;
+    }
   };
 
   const deleteHandler = (id) => {
@@ -45,7 +48,10 @@ export default function App() {
           renderItem={(item) => {
             return (
               <View>
-                <Text style={styles.outputText}>{item.item.value}</Text>
+                <Text style={styles.outputText}>
+                  {item.item.value}................{" "}
+                  <Text onPress={() => deleteHandler(item.item.id)}>X</Text>{" "}
+                </Text>
               </View>
             );
           }}
@@ -82,7 +88,7 @@ const styles = StyleSheet.create({
   },
   outputContainer: {
     flex: 4,
-    backgroundColor: "#0cf",
+    backgroundColor: "#00ccff3a",
     color: "black",
   },
   outputText: {
