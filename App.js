@@ -1,9 +1,17 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { StyleSheet, Text, View, Button, TextInput } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  TextInput,
+  ScrollView,
+  FlatList,
+} from "react-native";
 
 export default function App() {
-  const [items, setItems] = useState([1, 2, 3]);
+  const [items, setItems] = useState([]);
   const [text, setText] = useState("");
 
   const newItem = {
@@ -13,6 +21,11 @@ export default function App() {
 
   const pressHandler = () => {
     setItems((oldItems) => [...oldItems, newItem]);
+    setText("");
+  };
+
+  const deleteHandler = (id) => {
+    setItems(items.filter((item) => item.id !== id));
   };
 
   return (
@@ -22,14 +35,22 @@ export default function App() {
           style={styles.input}
           placeholder="Your goal!"
           value={text}
-          onChange={(e) => setText(e.target.value)}
+          onChangeText={setText}
         />
         <Button title="Add Goal" onPress={pressHandler} />
       </View>
-      <View>
-        {items?.map((item, index) => (
-          <Text key={index}> {item},</Text>
-        ))}
+      <View style={styles.outputContainer}>
+        <FlatList
+          data={items}
+          renderItem={(item) => {
+            return (
+              <View>
+                <Text style={styles.outputText}>{item.item.value}</Text>
+              </View>
+            );
+          }}
+          keyExtractor={(item) => item.id}
+        />
       </View>
     </View>
   );
@@ -37,18 +58,35 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 50,
+    padding: 25,
+    paddingTop: 50,
+    flex: 1,
+    justifyContent: "center",
   },
 
   inputContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
+    gap: 5,
+    flex: 2,
+    padding: 10,
   },
 
   input: {
-    borderWidth: 2,
-    borderColor: "#f0c",
-    width: "80%",
-    padding: 8,
+    borderWidth: 1,
+    borderColor: "#0cff0c",
+    width: "70%",
+    paddingVertical: 4,
+    paddingHorizontal: 10,
+  },
+  outputContainer: {
+    flex: 4,
+    backgroundColor: "#0cf",
+    color: "black",
+  },
+  outputText: {
+    fontSize: 24,
+    marginTop: 10,
   },
 });
