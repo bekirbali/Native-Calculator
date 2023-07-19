@@ -71,33 +71,19 @@ export default NumPad;
 const styles = StyleSheet.create({
   numpadContainer: {
     flex: 2,
-
     justifyContent: "center",
-    flexWrap: "wrap",
     backgroundColor: "blue",
   },
   pad: {
-    flex: 1,
+    backgroundColor: "red",
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "center",
-    alignItems: "center",
-
-    backgroundColor: "red",
-    borderColor: "white",
-    borderWidth: 2,
   },
   text: {
     textAlign: "center",
     width: "25%",
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: "black",
   },
-  // opacity: {
-  //   backgroundColor: "red",
-  //   height: 50,
-  //   width: 50,
-  //   borderColor: "black",
-  //   borderWidth: 2,
-  // },
 });
