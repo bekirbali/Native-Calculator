@@ -12,28 +12,56 @@ const NumPad = () => {
     console.log(title);
   };
 
-  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+  const arr = [
+    "AC",
+    "DEL",
+    "%",
+    "/",
+    7,
+    8,
+    9,
+    "X",
+    4,
+    5,
+    6,
+    "-",
+    1,
+    2,
+    3,
+    "+",
+    0,
+    ".",
+    "=",
+  ];
 
-  const Btn = ({ title }) => (
-    <TouchableOpacity
-      style={styles.opacity}
-      onPress={() => calculateHandler(title)}
-    >
-      <Text style={styles.text}>{title}</Text>
-    </TouchableOpacity>
-  );
+  // const Btn = ({ title }) => (
+  //   <TouchableOpacity
+  //     style={styles.opacity}
+  //     onPress={() => calculateHandler(title)}
+  //   >
+  //     <Text style={styles.text}>{title}</Text>
+  //   </TouchableOpacity>
+  // );
   return (
     <View style={styles.numpadContainer}>
-      <Btn title="AC" />
+      {/* <Btn title="AC" />
       <Btn title="1" />
       <Btn title="2" />
       <Btn title="3" />
       <Btn title="4" />
       <Btn title="5" />
-      <Btn title="7" />
-      {/* {arr.map((item, index) => (
-        <Text style={styles.text}>{item}</Text>
-      ))} */}
+    <Btn title="7" /> */}
+      <View style={styles.pad}>
+        {arr.map((item, index) => (
+          <Text
+            key={index}
+            onPress={() => calculateHandler(item)}
+            style={styles.text}
+          >
+            {item}
+          </Text>
+        ))}
+      </View>
     </View>
   );
 };
@@ -42,21 +70,34 @@ export default NumPad;
 
 const styles = StyleSheet.create({
   numpadContainer: {
-    justifyContent: "center",
     flex: 2,
+
+    justifyContent: "center",
+    flexWrap: "wrap",
+    backgroundColor: "blue",
+  },
+  pad: {
+    flex: 1,
     flexDirection: "row",
     flexWrap: "wrap",
-  },
-  text: {
+    justifyContent: "center",
+    alignItems: "center",
+
     backgroundColor: "red",
-    height: 50,
-    width: "33%",
-  },
-  opacity: {
-    backgroundColor: "red",
-    height: 50,
-    width: 50,
-    borderColor: "black",
+    borderColor: "white",
     borderWidth: 2,
   },
+  text: {
+    textAlign: "center",
+    width: "25%",
+    borderWidth: 2,
+    borderColor: "black",
+  },
+  // opacity: {
+  //   backgroundColor: "red",
+  //   height: 50,
+  //   width: 50,
+  //   borderColor: "black",
+  //   borderWidth: 2,
+  // },
 });
