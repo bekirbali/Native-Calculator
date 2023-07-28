@@ -53,13 +53,13 @@ const NumPad = () => {
     <Btn title="7" /> */}
       <View style={styles.pad}>
         {arr.map((item, index) => (
-          <Text
+          <Pressable
             key={index}
             onPress={() => calculateHandler(item)}
             style={styles.text}
           >
             {item}
-          </Text>
+          </Pressable>
         ))}
       </View>
     </View>
