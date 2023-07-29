@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Pressable,
   StyleSheet,
@@ -33,6 +33,8 @@ const NumPad = () => {
     ".",
     "=",
   ];
+
+  const [text, setText] = useState("");
 
   // const Btn = ({ title }) => (
   //   <TouchableOpacity
