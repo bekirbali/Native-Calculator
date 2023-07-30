@@ -36,14 +36,14 @@ const NumPad = () => {
 
   const [text, setText] = useState("");
 
-  // const Btn = ({ title }) => (
-  //   <TouchableOpacity
-  //     style={styles.opacity}
-  //     onPress={() => calculateHandler(title)}
-  //   >
-  //     <Text style={styles.text}>{title}</Text>
-  //   </TouchableOpacity>
-  // );
+  const Btn = ({ title }) => (
+    <TouchableOpacity
+      style={styles.opacity}
+      onPress={() => calculateHandler(title)}
+    >
+      <Text style={styles.text}>{title}</Text>
+    </TouchableOpacity>
+  );
   return (
     <View style={styles.numpadContainer}>
       {/* <Btn title="AC" />
