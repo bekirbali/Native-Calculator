@@ -15,14 +15,14 @@ const NumPad = () => {
       <View className="line-clamp">
         <h1>line clamp test</h1>
         <View className="inner">
-          <p>
+          <Text>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum cum
             blanditiis corporis nihil ipsam harum amet. Debitis nemo illo eius
             expedita molestias soluta totam. Delectus quos excepturi id minus!
             Quam harum autem ratione tempora debitis laborum exercitationem odio
             excepturi laudantium, voluptate eum aut cumque unde tenetur fugiat
             incidunt, doloribus repudiandae?
-          </p>
+          </Text>
           <h2>26</h2>
         </View>
       </View>
@@ -43,33 +43,33 @@ const NumPad = () => {
         </View>
         <View className="padArea">
           <View className="first row">
-            <p onClick={clickHandler}>AC</p>
-            <p onClick={clickHandler}>DEL</p>
-            <p onClick={operandHandler}>%</p>
-            <p onClick={operandHandler}>/</p>
+            <Text onClick={clickHandler}>AC</Text>
+            <Text onClick={clickHandler}>DEL</Text>
+            <Text onClick={operandHandler}>%</Text>
+            <Text onClick={operandHandler}>/</Text>
           </View>
           <View className="second row">
-            <p onClick={clickHandler}>7</p>
-            <p onClick={clickHandler}>8</p>
-            <p onClick={clickHandler}>9</p>
-            <p onClick={operandHandler}>*</p>
+            <Text onClick={clickHandler}>7</Text>
+            <Text onClick={clickHandler}>8</Text>
+            <Text onClick={clickHandler}>9</Text>
+            <Text onClick={operandHandler}>*</Text>
           </View>
           <View className="third row">
-            <p onClick={clickHandler}>4</p>
-            <p onClick={clickHandler}>5</p>
-            <p onClick={clickHandler}>6</p>
-            <p onClick={operandHandler}>-</p>
+            <Text onClick={clickHandler}>4</Text>
+            <Text onClick={clickHandler}>5</Text>
+            <Text onClick={clickHandler}>6</Text>
+            <Text onClick={operandHandler}>-</Text>
           </View>
           <View className="forth row">
-            <p onClick={clickHandler}>1</p>
-            <p onClick={clickHandler}>2</p>
-            <p onClick={clickHandler}>3</p>
-            <p onClick={operandHandler}>+</p>
+            <Text onClick={clickHandler}>1</Text>
+            <Text onClick={clickHandler}>2</Text>
+            <Text onClick={clickHandler}>3</Text>
+            <Text onClick={operandHandler}>+</Text>
           </View>
           <View className="fifth row">
-            <p onClick={clickHandler}>0</p>
-            <p onClick={operandHandler}>.</p>
-            <p onClick={operandHandler}>=</p>
+            <Text onClick={clickHandler}>0</Text>
+            <Text onClick={operandHandler}>.</Text>
+            <Text onClick={operandHandler}>=</Text>
           </View>
         </View>
       </View>
