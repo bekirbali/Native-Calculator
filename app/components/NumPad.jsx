@@ -8,32 +8,6 @@ import {
 } from "react-native";
 
 const NumPad = () => {
-  const calculateHandler = (title) => {
-    console.log(title);
-  };
-
-  const arr = [
-    "AC",
-    "DEL",
-    "%",
-    "/",
-    7,
-    8,
-    9,
-    "X",
-    4,
-    5,
-    6,
-    "-",
-    1,
-    2,
-    3,
-    "+",
-    0,
-    ".",
-    "=",
-  ];
-
   const [text, setText] = useState("");
 
   return (
