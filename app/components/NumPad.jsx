@@ -12,35 +12,7 @@ const NumPad = () => {
 
   return (
     <View style={styles.numpadContainer}>
-      <View className="line-clamp">
-        <h1>line clamp test</h1>
-        <View className="inner">
-          <Text>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum cum
-            blanditiis corporis nihil ipsam harum amet. Debitis nemo illo eius
-            expedita molestias soluta totam. Delectus quos excepturi id minus!
-            Quam harum autem ratione tempora debitis laborum exercitationem odio
-            excepturi laudantium, voluptate eum aut cumque unde tenetur fugiat
-            incidunt, doloribus repudiandae?
-          </Text>
-          <h2>26</h2>
-        </View>
-      </View>
       <View className="calculator">
-        <View className="inputArea">
-          <input
-            type="text"
-            value={text}
-            onChange={changeHandler}
-            className="inputTop"
-          />
-          <input
-            type="text"
-            value={text}
-            onChange={changeHandler}
-            className="inputBottom"
-          />
-        </View>
         <View className="padArea">
           <View className="first row">
             <Text onClick={clickHandler}>AC</Text>

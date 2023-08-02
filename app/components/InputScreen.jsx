@@ -4,8 +4,19 @@ import { Text, View, StyleSheet, TextInput } from "react-native";
 const InputScreen = () => {
   const [text, setText] = useState("");
   return (
-    <View style={styles.inputContainer}>
-      <TextInput style={styles.input} value={text} onChangeText={setText} />
+    <View className="inputArea">
+      <TextInput
+        type="text"
+        value={text}
+        onChange={changeHandler}
+        className="inputTop"
+      />
+      <TextInput
+        type="text"
+        value={text}
+        onChange={changeHandler}
+        className="inputBottom"
+      />
     </View>
   );
 };
