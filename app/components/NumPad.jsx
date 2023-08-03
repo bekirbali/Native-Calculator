@@ -10,6 +10,29 @@ import {
 const NumPad = () => {
   const [text, setText] = useState("");
 
+  const operandHandler = (e) => {
+    // setOperand(e.target.innerText);
+    operand = e.target.innerText;
+    switch (operand) {
+      case "+":
+        setResult(+result + +text);
+        setText("");
+        console.log(result);
+        break;
+      case "-":
+        console.log(result);
+        break;
+      case "/":
+        console.log(result);
+        break;
+      case "*":
+        console.log(result);
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <View style={styles.numpadContainer}>
       <View className="calculator">
