@@ -11,8 +11,8 @@ const NumPad = () => {
   const [text, setText] = useState("");
 
   const operandHandler = (e) => {
-    // setOperand(e.target.innerText);
-    operand = e.target.innerText;
+    setOperand(e.target.innerText);
+    // operand = e.target.innerText;
     switch (operand) {
       case "+":
         setResult(+result + +text);
@@ -20,12 +20,25 @@ const NumPad = () => {
         console.log(result);
         break;
       case "-":
+        setResult(text - result);
+        setText("");
         console.log(result);
         break;
       case "/":
+        if (result === 0) {
+          setResult(1);
+          setResult(+text / +result);
+          setText("");
+          console.log(result);
+          return;
+        }
+        setResult(+text / +result);
+        setText("");
         console.log(result);
         break;
       case "*":
+        setResult(+text * +result);
+        setText("");
         console.log(result);
         break;
       default:
