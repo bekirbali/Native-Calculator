@@ -12,7 +12,6 @@ const NumPad = () => {
 
   const operandHandler = (e) => {
     setOperand(e.target.innerText);
-    // operand = e.target.innerText;
     switch (operand) {
       case "+":
         setResult(+result + +text);
