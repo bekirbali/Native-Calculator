@@ -8,7 +8,9 @@ import {
 } from "react-native";
 
 const NumPad = () => {
-  const [text, setText] = useState("");
+  const [text, setText] = useState(0);
+  const [result, setResult] = useState(0);
+  const [operand, setOperand] = useState("");
 
   const operandHandler = (e) => {
     setOperand(e.target.innerText);
