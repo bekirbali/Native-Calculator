@@ -12,6 +12,16 @@ const NumPad = () => {
   const [result, setResult] = useState(0);
   const [operand, setOperand] = useState("");
 
+  const clickHandler = (e) => {
+    if (text === 0) {
+      console.log(text, "text");
+      setText("");
+      setText(Number(e.target.innerText));
+      return;
+    }
+    setText(text + e.target.innerText);
+  };
+
   const operandHandler = (e) => {
     setOperand(e.target.innerText);
     switch (operand) {
