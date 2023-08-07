@@ -125,7 +125,7 @@ export default NumPad;
 
 const styles = StyleSheet.create({
   numpadContainer: {
-    flex: 2,
+    flex: 5,
     justifyContent: "center",
     backgroundColor: "red",
   },

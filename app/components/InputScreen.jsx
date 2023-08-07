@@ -8,12 +8,12 @@ const InputScreen = () => {
     setText(Number(e.target.value));
   };
   return (
-    <View className={styles.inputContainer}>
-      <TextInput value={text} onChange={changeText} />
+    <View style={styles.inputContainer}>
+      <TextInput value={text} onChange={changeText} style={styles.inputTop} />
       <TextInput
         value={text}
         onChange={changeText}
-        style={{ backgroundColor: "blue", marginTop: 20 }}
+        style={styles.inputBottom}
       />
     </View>
   );
@@ -23,25 +23,25 @@ export default InputScreen;
 
 const styles = StyleSheet.create({
   inputContainer: {
+    flex: 2,
     display: "flex",
-    flex: 1,
-    justifyContent: "center",
-    backgroundColor: "yellow",
-    padding: 28,
-    width: 300,
-    height: 300,
+    gap: 10,
+    borderWidth: 5,
+    borderColor: "yellow",
   },
   inputTop: {
-    marginBottom: 40,
-    borderWidth: 2,
+    backgroundColor: "gray",
+    // marginTop: 20,
     borderColor: "black",
-    backgroundColor: "white",
+    borderWidth: 1,
+    padding: 5,
+    height: 100,
   },
   inputBottom: {
-    borderWidth: 2,
-    borderColor: "black",
-    backgroundColor: "yellow",
-    width: 100,
     height: 100,
+    backgroundColor: "cyan",
+    borderColor: "gray",
+    borderWidth: 1,
+    padding: 5,
   },
 });
