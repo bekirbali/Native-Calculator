@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
   numpadContainer: {
     flex: 2,
     justifyContent: "center",
-    backgroundColor: "blue",
+    backgroundColor: "red",
   },
   pad: {
     backgroundColor: "red",
