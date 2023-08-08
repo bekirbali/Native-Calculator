@@ -87,34 +87,111 @@ const NumPad = () => {
       <View style={styles.calculator}>
         <View style={styles.padArea}>
           <View style={styles.firstRow}>
-            <Text onClick={clickHandler}>AC</Text>
-            <Text onClick={clickHandler}>DEL</Text>
-            <Text onClick={operandHandler}>%</Text>
-            <Text onClick={operandHandler}>/</Text>
+            <TouchableOpacity>
+              <Text style={styles.text} onClick={clickHandler}>
+                AC
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.text} onClick={clickHandler}>
+                DEL
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.text} onClick={operandHandler}>
+                %
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.text} onClick={operandHandler}>
+                /
+              </Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.secondRow}>
-            <Text onClick={clickHandler}>7</Text>
-            <Text onClick={clickHandler}>8</Text>
-            <Text onClick={clickHandler}>9</Text>
-            <Text onClick={operandHandler}>*</Text>
+            <TouchableOpacity>
+              <Text style={styles.text} onClick={clickHandler}>
+                7
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.text} onClick={clickHandler}>
+                8
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.text} onClick={clickHandler}>
+                9
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.text} onClick={operandHandler}>
+                *
+              </Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.thirdRow}>
-            <Text onClick={clickHandler}>4</Text>
-            <Text onClick={clickHandler}>5</Text>
-            <Text onClick={clickHandler}>6</Text>
-            <Text onClick={operandHandler}>-</Text>
+            <TouchableOpacity>
+              <Text style={styles.text} onClick={clickHandler}>
+                4
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.text} onClick={clickHandler}>
+                5
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.text} onClick={clickHandler}>
+                6
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.text} onClick={operandHandler}>
+                -
+              </Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.forthRow}>
-            <Text onClick={clickHandler}>1</Text>
-            <Text onClick={clickHandler}>2</Text>
-            <Text onClick={clickHandler}>3</Text>
-            <Text onClick={operandHandler}>+</Text>
+            <TouchableOpacity>
+              <Text style={styles.text} onClick={clickHandler}>
+                1
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.text} onClick={clickHandler}>
+                2
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.text} onClick={clickHandler}>
+                3
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.text} onClick={operandHandler}>
+                +
+              </Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.fifthRow}>
-            <Text onClick={clickHandler}>0</Text>
-            <Text onClick={operandHandler}>.</Text>
-            <Text onClick={operandHandler}>=</Text>
+            <TouchableOpacity>
+              <Text style={styles.text} onClick={clickHandler}>
+                0
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.text} onClick={operandHandler}>
+                .
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.text} onClick={operandHandler}>
+                =
+              </Text>
+            </TouchableOpacity>
           </View>
+          <View></View>
         </View>
       </View>
     </View>
@@ -128,12 +205,46 @@ const styles = StyleSheet.create({
     flex: 5,
     justifyContent: "center",
     backgroundColor: "red",
+    padding: 10,
   },
-  calculator: {},
-  padArea: {},
-  firstRow: {},
-  secondRow: {},
-  thirdRow: {},
-  forthRow: {},
-  fifthRow: {},
+  calculator: {
+    borderWidth: 2,
+    borderColor: "black",
+    flex: 1,
+  },
+  padArea: {
+    flex: 1,
+    justifyContent: "space-around",
+  },
+  firstRow: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+  },
+  secondRow: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+  },
+  thirdRow: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+  },
+  forthRow: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+  },
+  fifthRow: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+  },
+  text: {
+    fontSize: 21,
+    fontWeight: "500",
+    backgroundColor: "gray",
+    padding: 10,
+    borderRadius: 50,
+    width: 50,
+    height: 50,
+    textAlign: "center",
+    verticalAlign: "middle",
+  },
 });
