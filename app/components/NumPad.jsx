@@ -84,33 +84,33 @@ const NumPad = () => {
 
   return (
     <View style={styles.numpadContainer}>
-      <View className="calculator">
-        <View className="padArea">
-          <View className="first row">
+      <View style={styles.calculator}>
+        <View style={styles.padArea}>
+          <View style={styles.firstRow}>
             <Text onClick={clickHandler}>AC</Text>
             <Text onClick={clickHandler}>DEL</Text>
             <Text onClick={operandHandler}>%</Text>
             <Text onClick={operandHandler}>/</Text>
           </View>
-          <View className="second row">
+          <View style={styles.secondRow}>
             <Text onClick={clickHandler}>7</Text>
             <Text onClick={clickHandler}>8</Text>
             <Text onClick={clickHandler}>9</Text>
             <Text onClick={operandHandler}>*</Text>
           </View>
-          <View className="third row">
+          <View style={styles.thirdRow}>
             <Text onClick={clickHandler}>4</Text>
             <Text onClick={clickHandler}>5</Text>
             <Text onClick={clickHandler}>6</Text>
             <Text onClick={operandHandler}>-</Text>
           </View>
-          <View className="forth row">
+          <View style={styles.forthRow}>
             <Text onClick={clickHandler}>1</Text>
             <Text onClick={clickHandler}>2</Text>
             <Text onClick={clickHandler}>3</Text>
             <Text onClick={operandHandler}>+</Text>
           </View>
-          <View className="fifth row">
+          <View style={styles.fifthRow}>
             <Text onClick={clickHandler}>0</Text>
             <Text onClick={operandHandler}>.</Text>
             <Text onClick={operandHandler}>=</Text>
@@ -129,16 +129,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "red",
   },
-  pad: {
-    backgroundColor: "red",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "center",
-  },
-  text: {
-    textAlign: "center",
-    width: "25%",
-    borderWidth: 1,
-    borderColor: "black",
-  },
+  calculator: {},
+  padArea: {},
+  firstRow: {},
+  secondRow: {},
+  thirdRow: {},
+  forthRow: {},
+  fifthRow: {},
 });
