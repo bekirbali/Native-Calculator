@@ -15,6 +15,10 @@ import InputScreen from "./app/components/InputScreen";
 import NumPad from "./app/components/NumPad";
 
 export default function App() {
+  const changeText = (e) => {
+    setText(Number(e.target.value));
+  };
+
   const equalHandler = () => {
     switch (operand) {
       case "+":
@@ -48,7 +52,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <InputScreen />
+      <InputScreen changeText={changeText} />
       <NumPad />
     </View>
   );
