@@ -15,6 +15,37 @@ import InputScreen from "./app/components/InputScreen";
 import NumPad from "./app/components/NumPad";
 
 export default function App() {
+  const equalHandler = () => {
+    switch (operand) {
+      case "+":
+        setResult(+result + +text);
+        setText("");
+        console.log(result);
+        break;
+      // case "-":
+      //   setResult(+text - +result);
+      //   setText("");
+      //   console.log(result);
+      //   break;
+      // case "/":
+      //   // if(result === 0){
+      //   //   setResult(1)
+      //   //   return
+      //   // }
+      //   setResult(+text / +result);
+      //   setText("");
+      //   console.log(result);
+      //   break;
+      // case "*":
+      //   setResult(+text * +result);
+      //   setText("");
+      //   console.log(result);
+      //   break;
+      default:
+        break;
+    }
+  };
+
   return (
     <View style={styles.container}>
       <InputScreen />
