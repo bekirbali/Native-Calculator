@@ -51,37 +51,6 @@ const NumPad = () => {
     }
   };
 
-  const equalHandler = () => {
-    switch (operand) {
-      case "+":
-        setResult(+result + +text);
-        setText("");
-        console.log(result);
-        break;
-      // case "-":
-      //   setResult(+text - +result);
-      //   setText("");
-      //   console.log(result);
-      //   break;
-      // case "/":
-      //   // if(result === 0){
-      //   //   setResult(1)
-      //   //   return
-      //   // }
-      //   setResult(+text / +result);
-      //   setText("");
-      //   console.log(result);
-      //   break;
-      // case "*":
-      //   setResult(+text * +result);
-      //   setText("");
-      //   console.log(result);
-      //   break;
-      default:
-        break;
-    }
-  };
-
   return (
     <View style={styles.numpadContainer}>
       <View style={styles.calculator}>
@@ -210,29 +179,44 @@ const styles = StyleSheet.create({
   calculator: {
     borderWidth: 2,
     borderColor: "black",
+    justifyContent: "center",
+    // padding: 10,
     flex: 1,
   },
   padArea: {
     flex: 1,
-    justifyContent: "space-around",
+    justifyContent: "space-between",
+    borderWidth: 2,
+    borderColor: "blue",
   },
   firstRow: {
     flexDirection: "row",
     justifyContent: "space-around",
+    borderWidth: 2,
+    borderColor: "black",
+    // marginTop: 40,
   },
   secondRow: {
+    borderWidth: 2,
+    borderColor: "black",
     flexDirection: "row",
     justifyContent: "space-around",
   },
   thirdRow: {
+    borderWidth: 2,
+    borderColor: "black",
     flexDirection: "row",
     justifyContent: "space-around",
   },
   forthRow: {
+    borderWidth: 2,
+    borderColor: "black",
     flexDirection: "row",
     justifyContent: "space-around",
   },
   fifthRow: {
+    borderWidth: 2,
+    borderColor: "black",
     flexDirection: "row",
     justifyContent: "space-around",
   },
