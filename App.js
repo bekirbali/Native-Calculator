@@ -16,8 +16,21 @@ import NumPad from "./app/components/NumPad";
 
 export default function App() {
   const [text, setText] = useState("");
+  const [innerText, setInnerText] = useState("");
   const changeText = (e) => {
     setText(Number(e.target.value));
+  };
+
+  const clickHandler = (innerTextValue) => {
+    // if (text === 0) {
+    //   console.log(text, "text");
+    //   setText("");
+    //   setText(Number(e.target.innerText));
+    //   return;
+    // }
+    // setText(text + e.target.innerText);
+    // setInnerText(innerTextValue);
+    console.log(innerTextValue);
   };
 
   const equalHandler = () => {
@@ -54,7 +67,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <InputScreen changeText={changeText} text={text} />
-      <NumPad text={text} />
+      <NumPad text={text} clickHandler={clickHandler} />
     </View>
   );
 }
