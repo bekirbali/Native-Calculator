@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   StyleSheet,
   Text,
@@ -22,14 +22,14 @@ export default function App() {
   };
 
   const clickHandler = (innerTextValue) => {
-    // if (text === 0) {
-    //   console.log(text, "text");
-    //   setText("");
-    //   setText(Number(e.target.innerText));
-    //   return;
-    // }
-    // setText(text + e.target.innerText);
-    // setInnerText(innerTextValue);
+    if (text === 0) {
+      console.log(text, "text");
+      setText("");
+      setText(Number(innerTextValue));
+      return;
+    }
+    setText(innerTextValue);
+    setInnerText(innerTextValue);
     console.log(innerTextValue);
   };
 
@@ -63,6 +63,8 @@ export default function App() {
         break;
     }
   };
+
+  // useEffect(() => {}, [text]);
 
   return (
     <View style={styles.container}>
