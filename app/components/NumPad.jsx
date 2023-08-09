@@ -1,58 +1,24 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const NumPad = ({ clickHandler }) => {
-  const [text, setText] = useState(0);
-  const [result, setResult] = useState(0);
-  const [operand, setOperand] = useState("");
-
-  const operandHandler = (e) => {
-    setOperand(e.target.innerText);
-    switch (operand) {
-      case "+":
-        setResult(+result + +text);
-        setText("");
-        console.log(result);
-        break;
-      case "-":
-        setResult(text - result);
-        setText("");
-        console.log(result);
-        break;
-      case "/":
-        if (result === 0) {
-          setResult(1);
-          setResult(+text / +result);
-          setText("");
-          console.log(result);
-          return;
-        }
-        setResult(+text / +result);
-        setText("");
-        console.log(result);
-        break;
-      case "*":
-        setResult(+text * +result);
-        setText("");
-        console.log(result);
-        break;
-      default:
-        break;
-    }
-  };
-
+const NumPad = ({
+  clickHandler,
+  operandHandler,
+  allClearHandler,
+  deleteHandler,
+}) => {
   return (
     <View style={styles.numpadContainer}>
       <View style={styles.calculator}>
         <View style={styles.padArea}>
           <View style={styles.firstRow}>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={() => clickHandler("AC")}>
+              <Text style={styles.text} onPress={allClearHandler}>
                 AC
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={() => clickHandler("DEL")}>
+              <Text style={styles.text} onPress={deleteHandler}>
                 DEL
               </Text>
             </TouchableOpacity>
@@ -63,7 +29,7 @@ const NumPad = ({ clickHandler }) => {
             </TouchableOpacity>
             <TouchableOpacity>
               <Text style={styles.text} onPress={operandHandler}>
-                /
+                ÷
               </Text>
             </TouchableOpacity>
           </View>
@@ -85,7 +51,7 @@ const NumPad = ({ clickHandler }) => {
             </TouchableOpacity>
             <TouchableOpacity>
               <Text style={styles.text} onPress={operandHandler}>
-                *
+                ×
               </Text>
             </TouchableOpacity>
           </View>
@@ -170,21 +136,17 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "black",
     justifyContent: "center",
-    // padding: 10,
     flex: 1,
   },
   padArea: {
     flex: 1,
     justifyContent: "space-between",
-    borderWidth: 2,
-    borderColor: "blue",
   },
   firstRow: {
     flexDirection: "row",
     justifyContent: "space-around",
     borderWidth: 2,
     borderColor: "black",
-    // marginTop: 40,
   },
   secondRow: {
     borderWidth: 2,
