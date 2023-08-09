@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { Text, View, StyleSheet, TextInput } from "react-native";
 
-const InputScreen = ({ changeText }) => {
-  const [text, setText] = useState("");
-
+const InputScreen = ({ changeText, text }) => {
   return (
     <View style={styles.inputContainer}>
       <TextInput value={text} onChange={changeText} style={styles.inputTop} />
