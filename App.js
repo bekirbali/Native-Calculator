@@ -15,22 +15,59 @@ import InputScreen from "./app/components/InputScreen";
 import NumPad from "./app/components/NumPad";
 
 export default function App() {
-  const [text, setText] = useState("");
+  const [text, setText] = useState("0");
+  const [result, setResult] = useState(0);
+  const [operand, setOperand] = useState("");
   const [innerText, setInnerText] = useState("");
   const changeText = (e) => {
     setText(Number(e.target.value));
   };
 
   const clickHandler = (innerTextValue) => {
-    if (text === 0) {
+    if (text === "0") {
       console.log(text, "text");
       setText("");
-      setText(Number(innerTextValue));
+      setText(innerTextValue);
       return;
     }
-    setText(innerTextValue);
+    setText(text + innerTextValue);
     setInnerText(innerTextValue);
     console.log(innerTextValue);
+  };
+
+  const operandHandler = (e) => {
+    setOperand(e.target.innerText);
+    switch (operand) {
+      case "+":
+        setResult(+result + +text);
+        setText("");
+        console.log(result);
+        break;
+      case "-":
+        setResult(text - result);
+        setText("");
+        console.log(result);
+        break;
+      case "/":
+        if (result === 0) {
+          setResult(1);
+          setResult(+text / +result);
+          setText("");
+          console.log(result);
+          return;
+        }
+        setResult(+text / +result);
+        setText("");
+        console.log(result);
+        break;
+      case "*":
+        setResult(+text * +result);
+        setText("");
+        console.log(result);
+        break;
+      default:
+        break;
+    }
   };
 
   const equalHandler = () => {
@@ -64,12 +101,30 @@ export default function App() {
     }
   };
 
+  const allClearHandler = () => {
+    setText("0");
+    setResult(0);
+  };
+
+  const deleteHandler = () => {
+    setText(text.slice(0, -1));
+    if (text.length === 1) {
+      setText("0");
+    }
+  };
+
   // useEffect(() => {}, [text]);
 
   return (
     <View style={styles.container}>
       <InputScreen changeText={changeText} text={text} />
-      <NumPad text={text} clickHandler={clickHandler} />
+      <NumPad
+        text={text}
+        clickHandler={clickHandler}
+        operandHandler={operandHandler}
+        allClearHandler={allClearHandler}
+        deleteHandler={deleteHandler}
+      />
     </View>
   );
 }

@@ -4,7 +4,7 @@ import { Text, View, StyleSheet, TextInput } from "react-native";
 const InputScreen = ({ changeText, text }) => {
   return (
     <View style={styles.inputContainer}>
-      <TextInput
+      {/* <TextInput
         value={text}
         onChangeText={changeText}
         style={styles.inputTop}
@@ -13,7 +13,9 @@ const InputScreen = ({ changeText, text }) => {
         value={text}
         onChangeText={changeText}
         style={styles.inputBottom}
-      />
+      /> */}
+      <Text style={styles.inputTop}>{text}</Text>
+      <Text style={styles.inputBottom}>{text}</Text>
     </View>
   );
 };
@@ -36,6 +38,7 @@ const styles = StyleSheet.create({
     textAlign: "right",
     fontSize: 24,
     color: "gray",
+    verticalAlign: "middle",
   },
   inputBottom: {
     height: 100,
@@ -43,5 +46,6 @@ const styles = StyleSheet.create({
     textAlign: "right",
     fontSize: 36,
     color: "white",
+    verticalAlign: "middle",
   },
 });
