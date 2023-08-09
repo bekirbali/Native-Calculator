@@ -15,6 +15,7 @@ import InputScreen from "./app/components/InputScreen";
 import NumPad from "./app/components/NumPad";
 
 export default function App() {
+  const [text, setText] = useState("");
   const changeText = (e) => {
     setText(Number(e.target.value));
   };
@@ -52,8 +53,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <InputScreen changeText={changeText} />
-      <NumPad />
+      <InputScreen changeText={changeText} text={text} />
+      <NumPad text={text} />
     </View>
   );
 }
