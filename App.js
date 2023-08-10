@@ -17,6 +17,7 @@ import NumPad from "./app/components/NumPad";
 export default function App() {
   const [text, setText] = useState("0");
   const [result, setResult] = useState(0);
+  const [showResult, setShowResult] = useState(false);
   const [operand, setOperand] = useState("");
   const [innerText, setInnerText] = useState("");
 
@@ -28,7 +29,8 @@ export default function App() {
       return;
     }
     setText(text + innerTextValue);
-    setInnerText(innerTextValue);
+    setShowResult(false);
+    // setInnerText(innerTextValue);
     // console.log(innerTextValue);
   };
 
@@ -68,34 +70,10 @@ export default function App() {
   // };
 
   const equalHandler = () => {
-    switch (operand) {
-      case "+":
-        setResult(+result + +text);
-        setText("");
-        console.log(result);
-        break;
-      // case "-":
-      //   setResult(+text - +result);
-      //   setText("");
-      //   console.log(result);
-      //   break;
-      // case "/":
-      //   // if(result === 0){
-      //   //   setResult(1)
-      //   //   return
-      //   // }
-      //   setResult(+text / +result);
-      //   setText("");
-      //   console.log(result);
-      //   break;
-      // case "*":
-      //   setResult(+text * +result);
-      //   setText("");
-      //   console.log(result);
-      //   break;
-      default:
-        break;
-    }
+    console.log("equalHandler");
+    console.log(eval(text));
+    setResult(eval(text));
+    setShowResult(true);
   };
 
   const allClearHandler = () => {
@@ -110,13 +88,13 @@ export default function App() {
     }
   };
 
-  useEffect(() => {
-    console.log(eval(text));
-  }, [text]);
+  // useEffect(() => {
+
+  // }, [text]);
 
   return (
     <View style={styles.container}>
-      <InputScreen text={text} />
+      <InputScreen text={text} result={result} showResult={showResult} />
       <NumPad
         text={text}
         clickHandler={clickHandler}
@@ -134,5 +112,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     marginTop: 50,
+    backgroundColor: "#1C1C1C",
   },
 });

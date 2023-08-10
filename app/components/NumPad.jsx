@@ -14,105 +14,162 @@ const NumPad = ({
         <View style={styles.padArea}>
           <View style={styles.firstRow}>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={allClearHandler}>
+              <Text
+                style={[styles.text, styles.nums, styles.topThree]}
+                onPress={allClearHandler}
+              >
                 AC
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={deleteHandler}>
+              <Text
+                style={[styles.text, styles.nums, styles.topThree]}
+                onPress={deleteHandler}
+              >
                 DEL
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={() => clickHandler("%")}>
+              <Text
+                style={[styles.text, styles.nums, styles.topThree]}
+                onPress={() => clickHandler("%")}
+              >
                 %
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={() => clickHandler("÷")}>
+              <Text
+                style={[styles.text, styles.operands]}
+                onPress={() => clickHandler("/")}
+              >
                 ÷
               </Text>
             </TouchableOpacity>
           </View>
           <View style={styles.secondRow}>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={() => clickHandler("7")}>
+              <Text
+                style={[styles.text, styles.nums]}
+                onPress={() => clickHandler("7")}
+              >
                 7
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={() => clickHandler("8")}>
+              <Text
+                style={[styles.text, styles.nums]}
+                onPress={() => clickHandler("8")}
+              >
                 8
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={() => clickHandler("9")}>
+              <Text
+                style={[styles.text, styles.nums]}
+                onPress={() => clickHandler("9")}
+              >
                 9
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={() => clickHandler("*")}>
+              <Text
+                style={[styles.text, styles.operands]}
+                onPress={() => clickHandler("*")}
+              >
                 ×
               </Text>
             </TouchableOpacity>
           </View>
           <View style={styles.thirdRow}>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={() => clickHandler("4")}>
+              <Text
+                style={[styles.text, styles.nums]}
+                onPress={() => clickHandler("4")}
+              >
                 4
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={() => clickHandler("5")}>
+              <Text
+                style={[styles.text, styles.nums]}
+                onPress={() => clickHandler("5")}
+              >
                 5
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={() => clickHandler("6")}>
+              <Text
+                style={[styles.text, styles.nums]}
+                onPress={() => clickHandler("6")}
+              >
                 6
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={() => clickHandler("-")}>
+              <Text
+                style={[styles.text, styles.operands]}
+                onPress={() => clickHandler("-")}
+              >
                 -
               </Text>
             </TouchableOpacity>
           </View>
           <View style={styles.forthRow}>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={() => clickHandler("1")}>
+              <Text
+                style={[styles.text, styles.nums]}
+                onPress={() => clickHandler("1")}
+              >
                 1
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={() => clickHandler("2")}>
+              <Text
+                style={[styles.text, styles.nums]}
+                onPress={() => clickHandler("2")}
+              >
                 2
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={() => clickHandler("3")}>
+              <Text
+                style={[styles.text, styles.nums]}
+                onPress={() => clickHandler("3")}
+              >
                 3
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={() => clickHandler("+")}>
+              <Text
+                style={[styles.text, styles.operands]}
+                onPress={() => clickHandler("+")}
+              >
                 +
               </Text>
             </TouchableOpacity>
           </View>
           <View style={styles.fifthRow}>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={() => clickHandler("0")}>
+              <Text
+                style={[styles.text, styles.nums, styles.zero]}
+                onPress={() => clickHandler("0")}
+              >
                 0
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={() => clickHandler(".")}>
+              <Text
+                style={[styles.text, styles.nums]}
+                onPress={() => clickHandler(".")}
+              >
                 .
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={equalHandler}>
+              <Text
+                style={[styles.text, styles.operands]}
+                onPress={equalHandler}
+              >
                 =
               </Text>
             </TouchableOpacity>
@@ -130,12 +187,10 @@ const styles = StyleSheet.create({
   numpadContainer: {
     flex: 5,
     justifyContent: "center",
-    backgroundColor: "red",
+    backgroundColor: "#1C1C1C",
     padding: 10,
   },
   calculator: {
-    borderWidth: 2,
-    borderColor: "black",
     justifyContent: "center",
     flex: 1,
   },
@@ -145,33 +200,23 @@ const styles = StyleSheet.create({
   },
   firstRow: {
     flexDirection: "row",
-    justifyContent: "space-around",
-    borderWidth: 2,
-    borderColor: "black",
+    justifyContent: "space-between",
   },
   secondRow: {
-    borderWidth: 2,
-    borderColor: "black",
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
   },
   thirdRow: {
-    borderWidth: 2,
-    borderColor: "black",
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
   },
   forthRow: {
-    borderWidth: 2,
-    borderColor: "black",
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
   },
   fifthRow: {
-    borderWidth: 2,
-    borderColor: "black",
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
   },
   text: {
     fontSize: 21,
@@ -183,5 +228,20 @@ const styles = StyleSheet.create({
     height: 60,
     textAlign: "center",
     verticalAlign: "middle",
+    color: "white",
+  },
+  operands: {
+    backgroundColor: "#FF9500",
+  },
+  nums: {
+    backgroundColor: "#505050",
+  },
+  topThree: {
+    backgroundColor: "#A2A2A2",
+    color: "#1C1F37",
+  },
+  zero: {
+    width: 160,
+    // color: "white",
   },
 });
