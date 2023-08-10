@@ -19,9 +19,6 @@ export default function App() {
   const [result, setResult] = useState(0);
   const [operand, setOperand] = useState("");
   const [innerText, setInnerText] = useState("");
-  const changeText = (e) => {
-    setText(Number(e.target.value));
-  };
 
   const clickHandler = (innerTextValue) => {
     if (text === "0") {
@@ -32,43 +29,43 @@ export default function App() {
     }
     setText(text + innerTextValue);
     setInnerText(innerTextValue);
-    console.log(innerTextValue);
+    // console.log(innerTextValue);
   };
 
-  const operandHandler = (e) => {
-    setOperand(e.target.innerText);
-    switch (operand) {
-      case "+":
-        setResult(+result + +text);
-        setText("");
-        console.log(result);
-        break;
-      case "-":
-        setResult(text - result);
-        setText("");
-        console.log(result);
-        break;
-      case "/":
-        if (result === 0) {
-          setResult(1);
-          setResult(+text / +result);
-          setText("");
-          console.log(result);
-          return;
-        }
-        setResult(+text / +result);
-        setText("");
-        console.log(result);
-        break;
-      case "*":
-        setResult(+text * +result);
-        setText("");
-        console.log(result);
-        break;
-      default:
-        break;
-    }
-  };
+  // const operandHandler = (e) => {
+  //   setOperand(e.target.innerText);
+  //   switch (operand) {
+  //     case "+":
+  //       setResult(+result + +text);
+  //       setText("");
+  //       console.log(result);
+  //       break;
+  //     case "-":
+  //       setResult(text - result);
+  //       setText("");
+  //       console.log(result);
+  //       break;
+  //     case "/":
+  //       if (result === 0) {
+  //         setResult(1);
+  //         setResult(+text / +result);
+  //         setText("");
+  //         console.log(result);
+  //         return;
+  //       }
+  //       setResult(+text / +result);
+  //       setText("");
+  //       console.log(result);
+  //       break;
+  //     case "*":
+  //       setResult(+text * +result);
+  //       setText("");
+  //       console.log(result);
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  // };
 
   const equalHandler = () => {
     switch (operand) {
@@ -113,7 +110,9 @@ export default function App() {
     }
   };
 
-  // useEffect(() => {}, [text]);
+  useEffect(() => {
+    console.log(eval(text));
+  }, [text]);
 
   return (
     <View style={styles.container}>
@@ -121,9 +120,10 @@ export default function App() {
       <NumPad
         text={text}
         clickHandler={clickHandler}
-        operandHandler={operandHandler}
+        // operandHandler={operandHandler}
         allClearHandler={allClearHandler}
         deleteHandler={deleteHandler}
+        equalHandler={equalHandler}
       />
     </View>
   );

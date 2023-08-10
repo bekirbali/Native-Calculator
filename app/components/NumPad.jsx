@@ -3,9 +3,10 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const NumPad = ({
   clickHandler,
-  operandHandler,
+  // operandHandler,
   allClearHandler,
   deleteHandler,
+  equalHandler,
 }) => {
   return (
     <View style={styles.numpadContainer}>
@@ -23,12 +24,12 @@ const NumPad = ({
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={operandHandler}>
+              <Text style={styles.text} onPress={() => clickHandler("%")}>
                 %
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={operandHandler}>
+              <Text style={styles.text} onPress={() => clickHandler("÷")}>
                 ÷
               </Text>
             </TouchableOpacity>
@@ -50,7 +51,7 @@ const NumPad = ({
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={operandHandler}>
+              <Text style={styles.text} onPress={() => clickHandler("*")}>
                 ×
               </Text>
             </TouchableOpacity>
@@ -72,7 +73,7 @@ const NumPad = ({
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={operandHandler}>
+              <Text style={styles.text} onPress={() => clickHandler("-")}>
                 -
               </Text>
             </TouchableOpacity>
@@ -94,7 +95,7 @@ const NumPad = ({
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={operandHandler}>
+              <Text style={styles.text} onPress={() => clickHandler("+")}>
                 +
               </Text>
             </TouchableOpacity>
@@ -111,7 +112,7 @@ const NumPad = ({
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text style={styles.text} onPress={operandHandler}>
+              <Text style={styles.text} onPress={equalHandler}>
                 =
               </Text>
             </TouchableOpacity>
