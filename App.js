@@ -116,7 +116,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <InputScreen changeText={changeText} text={text} />
+      <InputScreen text={text} />
       <NumPad
         text={text}
         clickHandler={clickHandler}
