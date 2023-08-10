@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Text, View, StyleSheet, TextInput } from "react-native";
 
-const InputScreen = ({ changeText, text }) => {
+const InputScreen = ({ text, result, showResult }) => {
   return (
     <View style={styles.inputContainer}>
       {/* <TextInput
@@ -14,7 +14,12 @@ const InputScreen = ({ changeText, text }) => {
         onChangeText={changeText}
         style={styles.inputBottom}
       /> */}
-      <Text style={styles.inputTop}>{text}</Text>
+      {/* {showResult ? (
+        <Text style={styles.inputTop}>{result}</Text>
+      ) : (
+        <Text style={styles.inputTop}>={text}</Text>
+      )} */}
+      <Text style={styles.inputTop}>{showResult ? `=${result}` : text}</Text>
       <Text style={styles.inputBottom}>{text}</Text>
     </View>
   );
@@ -26,13 +31,9 @@ const styles = StyleSheet.create({
   inputContainer: {
     flex: 2,
     display: "flex",
-    borderWidth: 5,
-    borderColor: "yellow",
-    backgroundColor: "black",
+    backgroundColor: "#1C1C1C",
   },
   inputTop: {
-    borderColor: "black",
-    borderWidth: 1,
     paddingHorizontal: 15,
     height: 100,
     textAlign: "right",
