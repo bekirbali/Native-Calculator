@@ -15,14 +15,18 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.Calculator"
+      "package": "com.anonymous.Calculator",
+      "runtimeVersion": "1.0.0"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -31,6 +35,9 @@
       "eas": {
         "projectId": "25b209bb-0908-4820-bace-11a26ce89e48"
       }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/25b209bb-0908-4820-bace-11a26ce89e48"
     }
   }
 }
