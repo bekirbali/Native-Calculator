@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    marginTop: 50,
+    // marginTop: 50,
     backgroundColor: "#1C1C1C",
   },
 });
